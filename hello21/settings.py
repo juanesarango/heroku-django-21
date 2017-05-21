@@ -48,7 +48,9 @@ SECRET_KEY = 'q6%ckv$t8(*iu$p%0$1ak+(_svs_ouv(um880@m%9i4rmzd#9l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'juanes-hello21.herokuapp.com'
+]
 
 
 # Application definition
