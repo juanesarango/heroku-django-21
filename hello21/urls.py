@@ -21,4 +21,5 @@ import hello21.views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^buy$', hello21.views.buy),
+    url(r'^redeem$', hello21.views.redeem),
 ]
