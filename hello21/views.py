@@ -46,7 +46,24 @@ def _redeem(token):
     return JsonResponse({'success': True, 'message': "Thanks!"}, status=200)
 
 
+def get_redeemed_price(request):
+    try:
+        token = request.data['token']
+    except:  # noqa
+        return JsonResponse({'error': 'POST data must include "token"'}, status=400)
+
+    try:
+        requested_token = Token.objects.get(token.value)
+        if requested_token.redeemed:
+            raise ValueError()
+    except:  # noqa
+        return 100
+
+    return 0
+
+
 @api_view(['POST'])
+@payment.required(get_redeemed_price)
 def redeem(request):
     try:
         token = request.data['token']
